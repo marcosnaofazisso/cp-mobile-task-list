@@ -1,0 +1,123 @@
+import { StatusBar } from 'expo-status-bar';
+import {StyleSheet, Text, TextInput, View,Pressable,Button,Keyboard, Image, Alert} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useState } from 'react';
+import Task from './Task.js'
+
+export default function Tasks() {
+  const [task, setTask] = useState('');
+  const [taskList, setTaskList] = useState([
+    'Lavar a Louça',
+    'Limpar a Casa',
+  ]);
+  let auxiliarList = [];
+
+  const STORAGE_KEY = 'TASK';
+
+  handleTextChanged = (newTask) => {
+    setTask(newTask);
+  };
+
+  handleSubmit = () => {
+    setTask('');
+    auxiliarList.push(task);
+    
+    setTaskList((taskList) => taskList.concat([task]));
+
+    const updatedTaskList = [];
+    updatedTaskList.push(newTask);
+    saveName(taskList, STORAGE_KEY);
+  };
+
+  saveName = async (value, key, callback = null) => {
+    try {
+      await AsyncStorage.setItem(key, value, callback);
+      setTask(await AsyncStorage.getItem(STORAGE_KEY, callback));
+    } catch (e) {
+      throw new Error('Não foi possível salvar a tarefa');
+    }
+  };
+
+  deleteTask = (task, index) => {
+    Alert.alert("Congratulations!", `Your task ${task} was successfully finished!`);
+    const updatedTaskList = taskList.filter((_, i) => i !== index);
+    setTaskList(updatedTaskList);
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.textInput}
+        placeholder="Type your new tasks here..."
+        maxLength={50}
+        onBlur={Keyboard.dismiss}
+        value={task.length > 0 ? task:''}
+        onChangeText={this.handleTextChanged}
+      />
+      <Pressable style={styles.button} onPress={this.handleSubmit}>
+        <Text style={styles.button.text}>SAVE</Text>
+      </Pressable>
+      <Text style={styles.listTitle}>Task List</Text>
+      {taskList.length > 0 ? (
+        taskList.map((task, index) => (
+      <Pressable onPress={() => this.deleteTask(task, index)}>
+          <Task data={`${index + 1} - ${task}`} />
+      </Pressable>
+      ))) : 
+      <Text style={styles.emptyList}>Empty list....</Text>}
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5F7C3',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  textInput: {
+    borderColor: '#000',
+    borderWidth: 1,
+    height: 90,
+    fontSize: 18,
+    paddingLeft: 30,
+    paddingRight: 30,
+    marginTop: 40,
+  },
+   button: {
+    text: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 24,
+    },
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#000',
+    marginTop: 15,
+  },
+  listTitle: {
+    color: '#000',
+    fontFamily: 'sans-serif, Roboto',
+    fontWeight: 'bold',
+    fontSize: 22,
+    marginTop: 50, 
+    marginBottom: 10,
+  },
+  removeImage: {
+    width: 5,
+    height: 5,
+  },
+  emptyList: {
+    color: '#000',
+    fontFamily: 'sans-serif, Roboto',
+    fontSize: 20,
+    marginRight: 10,
+  }
+});
