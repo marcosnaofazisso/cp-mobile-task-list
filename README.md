@@ -2,7 +2,20 @@
 
 Projeto de Lista de Tarefas para a disciplina de Hybrid Mobile App Development do 2 ano de ADS da FIAP.
 
-## 2TDSJ
+Link Snack Expo: https://snack.expo.dev/@marcosnaofazisso/cp1---lista-de-tarefas
+
+## 2TDSJ - Grupo Calíope:
+Cristine Acocella (RM88251)
+<br/>
+Jonathan Felix de Lima (RM88082)
+<br/>
+Marcos Maciel (RM88267)
+<br/>
+Marcos Vinicius Mendes Ferreira (RM86904)
+<br/>
+Priscila Nastacio Fernandes de Sa (RM88849)
+
+
 ### Developers: 
 * [Marcos Vinicius Ferreira - RM86904](https://github.com/marcosnaofazisso) 
 
@@ -10,22 +23,17 @@ Projeto de Lista de Tarefas para a disciplina de Hybrid Mobile App Development d
 O objetivo era desenvolver uma Lista de Tarefas na qual o usuário pudesse inserir uma nova tarefa e excluir tarefas da lista. Foi recomendado uso de navegação e uso de AsyncStorage. 
 
 # Demo
-<img src="./demo/boromir.jpg" height="200" width="400">
+<img src="./demo/demo.gif" height="700" width="300">
 
 Aqui temos um exemplo do funcionamento da aplicação. 
 
 # Tutorial
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Para utilizar esse projeto, é recomendado que utilize o Expo no desenvolvimento da aplicação React Native
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-    code 
-    code  
-    code
+    git init 
+    git clone https://github.com/marcosnaofazisso/cp-mobile-task-list  
+    npm install -g expo-cli
+    npm run android
 
 
 ## Obrigado!
