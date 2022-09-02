@@ -1,21 +1,18 @@
-# Project Name
+# Task List
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text eve
+Projeto de Lista de Tarefas para a disciplina de Hybrid Mobile App Development do 2 ano de ADS da FIAP.
 
+## 2TDSJ
 ### Developers: 
-* [Marcos Vinicius Ferreira](https://github.com/marcosnaofazisso) 
+* [Marcos Vinicius Ferreira - RM86904](https://github.com/marcosnaofazisso) 
 
 ## Goals and Rules:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+O objetivo era desenvolver uma Lista de Tarefas na qual o usuário pudesse inserir uma nova tarefa e excluir tarefas da lista. Foi recomendado uso de navegação e uso de AsyncStorage. 
 
 # Demo
 <img src="./demo/boromir.jpg" height="200" width="400">
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Aqui temos um exemplo do funcionamento da aplicação. 
 
 # Tutorial
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -31,5 +28,5 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     code
 
 
-## Thank you!
+## Obrigado!
 
